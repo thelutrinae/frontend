@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class BaseService {
    * the frontend fetches data from the WordPress website
    * through the WordPress API
    */
-  private BASE_URL: 'https://thelutrinae.com/wp-json/wp/v2';
+  private readonly BASE_URL = 'https://thelutrinae.com/wp-json/wp/v2';
 
   public httpOptions = {
     headers: new HttpHeaders({
@@ -21,7 +21,7 @@ export class BaseService {
     }),
   };
 
-  constructor(protected httpClient: HttpClient) { }
+  constructor(protected httpClient: HttpClient) {}
 
   get baseURL(): string {
     return this.BASE_URL;
