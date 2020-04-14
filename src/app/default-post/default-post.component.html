@@ -1,3 +1,23 @@
-<article *ngIf="post" [innerHTML]="post.content.rendered">
-
-</article>
+<div class="container mt-5" *ngIf="post; else loading;">
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <h1>{{ post.title.rendered }}</h1>
+            <span class="author">
+                By 
+                <a *ngFor="let author of post.acf.authors" 
+                    [routerLink]="['/author', author.nickname]">
+                    {{ author.display_name }}
+                </a>
+            </span>
+            <span class="date">
+                {{ post.date | date: "mediumDate" }}
+            </span>
+            <article *ngIf="post" class="mt-4"
+                [innerHTML]="post.content.rendered">
+            </article>
+        </div>
+    </div>
+</div>
+<ng-template #loading>
+    <app-loader></app-loader>
+</ng-template>
