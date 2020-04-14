@@ -25,7 +25,8 @@ export class PostService extends BaseService {
     if (limit !== 10 || page !== 0) {
       params = new HttpParams()
         .set('per_page', limit.toString())
-        .set('page', page.toString());
+        .set('page', page.toString())
+        .set('_embed', '');
     }
 
     return await this.httpClient.get(this.POSTS_URL, { params }).toPromise();
@@ -36,7 +37,9 @@ export class PostService extends BaseService {
    * @param slug: the page's url slug (e.g. 'example-article', 'how-to-code')
    */
   public async getPostBySlug(slug: string) {
-    const params = new HttpParams().set('slug', slug);
+    const params = new HttpParams()
+      .set('slug', slug)
+      .set('_embed', 'true');
     return await this.httpClient.get(this.POSTS_URL, { params }).toPromise();
   }
 
@@ -50,10 +53,11 @@ export class PostService extends BaseService {
     page: number = 1) {
     let params = new HttpParams();
 
-    if (limit !== 10 || page !== 0) {
+    if (limit !== 10 || page > 1) {
       params = new HttpParams()
         .set('per_page', limit.toString())
-        .set('page', page.toString());
+        .set('page', page.toString())
+        .set('_embed', '');
     }
 
     return await this.httpClient.get(this.POSTS_URL, { params }).toPromise();
