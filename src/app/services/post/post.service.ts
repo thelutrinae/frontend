@@ -32,6 +32,15 @@ export class PostService extends BaseService {
   }
 
   /**
+   * Get a post by it's page slug
+   * @param slug: the page's url slug (e.g. 'example-article', 'how-to-code')
+   */
+  public async getPostBySlug(slug: string) {
+    const params = new HttpParams().set('slug', slug);
+    return await this.httpClient.get(this.POSTS_URL, { params }).toPromise();
+  }
+
+  /**
    * Get all posts by category ID
    * @param category: The category ID from which to fetch posts
    */
