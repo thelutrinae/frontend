@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from './services/post/post.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,7 @@ import { PostService } from './services/post/post.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'lutrinae';
+  constructor() { }
 
-  constructor(private postService: PostService) {}
-
-  async ngOnInit() {
-    const res = await this.postService.getRecentPosts();
-    console.log(res);
-  }
+  ngOnInit() { }
 }
