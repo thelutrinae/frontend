@@ -32,7 +32,10 @@ export class BaseService {
     return this.SITE_URL;
   }
 
-  public removeSiteURL(fullURL: string): string {
-    return fullURL.substr(this.SITE_URL.length, fullURL.length);
+  public createRouterLinks(posts: any): any {
+    for (const post of posts) {
+      post.link = post.link.substr(this.SITE_URL.length, post.link.length);
+    }
+    return posts;
   }
 }

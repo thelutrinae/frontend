@@ -7,7 +7,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class PostService extends BaseService {
   private POSTS_URL = this.baseURL + '/posts';
-  private posts;
   private limit = 10;
 
   constructor(protected httpClient: HttpClient) {
@@ -29,7 +28,8 @@ export class PostService extends BaseService {
         .set('_embed', '');
     }
 
-    return await this.httpClient.get(this.POSTS_URL, { params }).toPromise();
+    const posts = await this.httpClient.get(this.POSTS_URL, { params }).toPromise();
+    return this.createRouterLinks(posts);
   }
 
   /**
@@ -40,7 +40,9 @@ export class PostService extends BaseService {
     const params = new HttpParams()
       .set('slug', slug)
       .set('_embed', 'true');
-    return await this.httpClient.get(this.POSTS_URL, { params }).toPromise();
+
+    const posts = await this.httpClient.get(this.POSTS_URL, { params }).toPromise();
+    return this.createRouterLinks(posts);
   }
 
   /**
@@ -60,7 +62,8 @@ export class PostService extends BaseService {
         .set('_embed', '');
     }
 
-    return await this.httpClient.get(this.POSTS_URL, { params }).toPromise();
+    const posts = await this.httpClient.get(this.POSTS_URL, { params }).toPromise();
+    return this.createRouterLinks(posts);
   }
 
   /**
