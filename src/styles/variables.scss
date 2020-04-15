@@ -6,6 +6,7 @@
     --text-default: rgba(0, 0, 0, 0.87);
     --text-link: #3478ad;
     --text-link-dark: #2d6895;
+    --blockquote: rgba(0, 0, 0, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,5 +19,6 @@
         --text-link: #669ad9;
         --text-link-dark: #3f80cf;
         --text-default: rgba(225, 225, 225, 0.87);
+        --blockquote: rgba(255, 255, 255, 0.15);
     }
 }

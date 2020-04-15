@@ -1,0 +1,36 @@
+img {
+    max-width: 100%;
+}
+
+.wp-block-image {
+    margin-bottom: 2em;
+
+    &.is-style-rounded {
+        text-align: center;
+
+        img {
+            border-radius: 512px;
+        }
+    }
+}
+
+blockquote.wp-block-quote {
+    font-size: 1.25em;
+    line-height: 1.7em;
+    font-style: italic;
+
+    cite {
+        color: var(--text-muted);
+        font-size: 16px;
+    }
+
+    & > p:before {
+        content: "“";
+        display: block;
+        font-size: 4em;
+        color: var(--blockquote);
+        margin-top: 50px;
+        margin-left: -25px;
+        margin-bottom: -45px;
+    }
+}
