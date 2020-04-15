@@ -1,0 +1,36 @@
+<ng-template [ngIf]="post">
+    <div class="container mt-5">
+        <div class="row mb-3">
+            <div class="col-12">
+                <span class="post-categories">
+                    <a *ngFor="let category of categories" 
+                        class="post-categories"
+                        [routerLink]="['/category', category.slug]">
+                        {{ category.name }}
+                    </a>
+                </span>
+                <h1 class="single-post-title">{{ post.title.rendered }}</h1>
+                <app-byline [post]="post"></app-byline>
+                <span class="date">
+                    <span class="text-muted">•</span> {{ post.date | date: "mediumDate" }}
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <img *ngIf="post.acf.showFeatured == null || post.acf.showFeatured == true"
+                [src]="post.jetpack_featured_media_url" alt="">
+                <article *ngIf="post" class="mt-4"
+                    [innerHTML]="post.content.rendered">
+                </article>
+            </div>
+            <div class="col-12 col-md-4">
+                <app-sidebar></app-sidebar>
+            </div>
+        </div>
+    </div>
+    <app-related-posts [post]="post"></app-related-posts>
+</ng-template>
+<ng-template [ngIf]="!post">
+    <app-loader></app-loader>
+</ng-template>

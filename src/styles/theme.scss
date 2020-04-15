@@ -1,0 +1,39 @@
+a {
+    color: var(--text-link);
+
+    &:hover {
+        color: var(--text-link-dark);
+    }
+}
+
+.bg-accent {
+    background-color: var(--bg-accent);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--text-default);
+        background-color: var(--background);
+    }
+
+    a {
+        color: var(--text-link);
+
+        &:hover {
+            color: var(--text-link-dark);
+        }
+    }
+
+    .navbar-bg, .dropdown .dropdown-menu {
+        background-color: var(--bg-navbar);
+
+        a.dropdown-item {
+            color: var(--text-muted);
+
+            &:hover {
+                color: var(--text-default);
+                background-color: var(--bg-hover-highlight);
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+html, body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.post-title, .post-categories,
+.navbar {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    color: var(--text-muted);
+
+    .nav-item a:hover {
+        color: var(--text-default);
+    }
+}
+
+/* Post title on a single page */
+.single-post-title {
+    font-weight: bold;
+}
+
+/* Post title on a block (e.g. related posts, sidebar, etc. */
+a.post-title {
+    color: var(--text-default);
+
+    &:hover {
+        color: var(--text-link);
+    }
+}
+
+.authors, a.author-name, .post-categories {
+    color: var(--text-muted);
+
+    &:hover:not(.authors) {
+        color: var(--text-link);
+    }
+}
+
+.post-excerpt {
+    color: var(--text-muted);
+}
+
+/* WordPress dropcap class */
+.has-drop-cap::first-letter {
+    font-family: 'Merriweather';
+    float: left;
+    font-size: 7em;
+    line-height: .8;
+    margin: .1em .2em 0 0.05em;
+    text-transform: uppercase;
+}
+
+.post-categories {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}

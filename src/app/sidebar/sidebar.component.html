@@ -1,0 +1,19 @@
+<div class="sticky-top">
+    <h3 class="pt-4">Recent Articles</h3>
+    <div *ngFor="let post of posts" class="my-4">
+        <div>
+            <a [routerLink]="['/category', cat.slug]" class="post-categories mr-2"
+                *ngFor="let cat of post._embedded['wp:term'][0]">
+                {{ cat.name }}
+            </a>
+        </div>
+        <div>
+            <a [routerLink]="[post.link]" class="post-title">
+                {{ post.title.rendered }}
+            </a>
+        </div>
+        <div>
+            <app-byline [post]="post"></app-byline>
+        </div>
+    </div>
+</div>

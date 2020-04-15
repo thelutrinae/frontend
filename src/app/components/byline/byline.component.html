@@ -1,0 +1,15 @@
+<span class="authors">
+    By 
+    <ng-template [ngIf]="acfAuthors">
+        <a *ngFor="let author of acfAuthors" class="author-name"
+            [routerLink]="['/author', author.nickname]">
+            {{ author.display_name }}
+        </a>
+    </ng-template>
+    <ng-template [ngIf]="!acfAuthors && wpAuthor">
+        <a class="author-name"
+            [routerLink]="['/author', wpAuthor.slug]">
+            {{ wpAuthor.name }}
+        </a>
+    </ng-template>
+</span>
