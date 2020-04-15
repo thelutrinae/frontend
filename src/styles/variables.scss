@@ -1,37 +1,20 @@
 :root {
+    --bg-navbar: white;
+    --bg-hover-highlight: rgba(0, 0, 0, 0.25);
     --text-muted: rgba(0, 0, 0, 0.57);
     --text-default: rgba(0, 0, 0, 0.87);
     --text-link: #3478ad;
     --text-link-dark: #2d6895;
 }
 
-a {
-    color: var(--text-link);
-
-    &:hover {
-        color: var(--text-link-dark);
-    }
-}
-
 @media (prefers-color-scheme: dark) {
     :root {
+        --background: #151515;
+        --bg-navbar: #202020;
+        --bg-hover-highlight: rgba(255, 255, 255, 0.05);
         --text-muted: rgba(255, 255, 255, 0.57);
         --text-link: #669ad9;
         --text-link-dark: #3f80cf;
-        --text-default: rgba(255, 255, 255, 0.87);
-        --background: #151515;
-    }
-
-    body {
-        color: var(--text-default);
-        background-color: var(--background);
-    }
-
-    a {
-        color: var(--text-link);
-
-        &:hover {
-            color: var(--text-link-dark);
-        }
+        --text-default: rgba(225, 225, 225, 0.87);
     }
 }

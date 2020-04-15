@@ -1,37 +1,28 @@
 <div class="container mt-5" *ngIf="post; else loading;">
     <div class="row">
-        <div class="col-12 col-md-8">
+        <div class="col-12">
             <span class="post-categories">
                 <a *ngFor="let category of categories" 
-                    class="post-categories text-muted" 
+                    class="post-categories"
                     [routerLink]="['/category', category.slug]">
                     {{ category.name }}
                 </a>
             </span>
-        </div>
-        <div class="col-12 col-md-8">
             <h1 class="single-post-title">{{ post.title.rendered }}</h1>
-            <span class="author">
-                By 
-                <ng-template [ngIf]="post.acf.authors">
-                    <a *ngFor="let author of post.acf.authors" 
-                        [routerLink]="['/author', author.nickname]">
-                        {{ author.display_name }}
-                    </a>
-                </ng-template>
-                <ng-template [ngIf]="!post.acf.authors && post._embedded.author" #wpAuthor>
-                    <a 
-                        [routerLink]="['/author', post._embedded.author[0].slug]">
-                        {{ post._embedded.author[0].name }}
-                    </a>
-                </ng-template>
-            </span>
+            <app-byline [post]="post"></app-byline>
             <span class="date">
                 <span class="text-muted">•</span> {{ post.date | date: "mediumDate" }}
             </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-8">
             <article *ngIf="post" class="mt-4"
                 [innerHTML]="post.content.rendered">
             </article>
+        </div>
+        <div class="col-12 col-md-4">
+            <app-sidebar></app-sidebar>
         </div>
     </div>
     <div class="row">

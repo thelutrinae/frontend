@@ -4,7 +4,9 @@
         <span class="text-muted"></span>
     </div>
     <div class="col-12 col-md-4" *ngFor="let post of posts">
-        <h4>{{ post.title.rendered }}</h4>
-        <p [innerHTML]="post.excerpt.rendered"></p>
+        <a href="#" class="post-title">
+            <h4>{{ post.title.rendered }}</h4>
+        </a>
+        <p class="post-excerpt" [innerHTML]="post.excerpt.rendered"></p>
     </div>
 </div>

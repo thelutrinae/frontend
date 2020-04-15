@@ -9,6 +9,8 @@ import { DefaultPostComponent } from './default-post/default-post.component';
 import { DefaultPageComponent } from './default-page/default-page.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { RelatedPostsComponent } from './components/related-posts/related-posts.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { BylineComponent } from './components/byline/byline.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { RelatedPostsComponent } from './components/related-posts/related-posts.
     DefaultPostComponent,
     DefaultPageComponent,
     LoaderComponent,
-    RelatedPostsComponent
+    RelatedPostsComponent,
+    SidebarComponent,
+    BylineComponent
   ],
   imports: [
     BrowserModule,

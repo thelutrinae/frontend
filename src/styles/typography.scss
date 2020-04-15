@@ -2,12 +2,44 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.post-title, .post-categories,
+.navbar {
     font-family: 'Montserrat', sans-serif;
-    
-    &.single-post-title {
-        font-weight: bold;
+}
+
+.navbar {
+    color: var(--text-muted);
+
+    .nav-item a:hover {
+        color: var(--text-default);
     }
+}
+
+/* Post title on a single page */
+.single-post-title {
+    font-weight: bold;
+}
+
+/* Post title on a block (e.g. related posts, sidebar, etc. */
+a.post-title {
+    color: var(--text-default);
+
+    &:hover {
+        color: var(--text-link);
+    }
+}
+
+.authors, a.author-name, .post-categories {
+    color: var(--text-muted);
+
+    &:hover:not(.authors) {
+        color: var(--text-link);
+    }
+}
+
+.post-excerpt {
+    color: var(--text-muted);
 }
 
 /* WordPress dropcap class */
@@ -21,7 +53,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-categories {
-    font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
 }

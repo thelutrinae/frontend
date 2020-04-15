@@ -22,7 +22,6 @@ export class DefaultPostComponent implements OnInit {
   async ngOnInit() {
     const resp = await this.postService.getPostBySlug(this.slug);
     this.mPost = resp[0];
-    console.log(this.mPost);
   }
 
   get post() {
