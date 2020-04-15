@@ -22,10 +22,15 @@ export class DefaultPostComponent implements OnInit {
   async ngOnInit() {
     const resp = await this.postService.getPostBySlug(this.slug);
     this.mPost = resp[0];
+    console.log(this.mPost);
   }
 
   get post() {
     return this.mPost;
+  }
+
+  public hasFeaturedImage() {
+    return this.mPost.jetpack_featured_media_url;
   }
 
   get categories() {
