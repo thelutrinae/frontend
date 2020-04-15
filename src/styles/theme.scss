@@ -6,6 +6,10 @@ a {
     }
 }
 
+.bg-accent {
+    background-color: var(--bg-accent);
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         color: var(--text-default);

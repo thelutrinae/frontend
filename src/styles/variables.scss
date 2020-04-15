@@ -1,5 +1,6 @@
 :root {
     --bg-navbar: white;
+    --bg-accent: #f4f4f4;
     --bg-hover-highlight: rgba(0, 0, 0, 0.25);
     --text-muted: rgba(0, 0, 0, 0.57);
     --text-default: rgba(0, 0, 0, 0.87);
@@ -11,6 +12,7 @@
     :root {
         --background: #151515;
         --bg-navbar: #202020;
+        --bg-accent: #202020;
         --bg-hover-highlight: rgba(255, 255, 255, 0.05);
         --text-muted: rgba(255, 255, 255, 0.57);
         --text-link: #669ad9;
