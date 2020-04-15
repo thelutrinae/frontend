@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../services/post/post.service';
+import { PostService } from '@services/post/post.service';
 import { ActivatedRoute, Router, NavigationEnd, NavigationStart } from '@angular/router';
-import { SEOService } from '../services/seo-service/seo-service.service';
+import { SEOService } from '@services/seo-service/seo-service.service';
 
 @Component({
   selector: 'app-default-post',

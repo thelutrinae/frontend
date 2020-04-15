@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DefaultPageComponent } from './default-page/default-page.component';
-import { DefaultPostComponent } from './default-post/default-post.component';
+import { DefaultPageComponent } from '@templates/default-page/default-page.component';
+import { DefaultPostComponent } from '@templates/default-post/default-post.component';
 
 
 const routes: Routes = [
