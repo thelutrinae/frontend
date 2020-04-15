@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post/post.service';
 import { ActivatedRoute, Router, NavigationEnd, NavigationStart } from '@angular/router';
+import { SEOService } from '../services/seo-service/seo-service.service';
 
 @Component({
   selector: 'app-default-post',
@@ -14,6 +15,7 @@ export class DefaultPostComponent implements OnInit {
 
   constructor(
     private postService: PostService,
+    private seoService: SEOService,
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) {
@@ -38,6 +40,14 @@ export class DefaultPostComponent implements OnInit {
     this.slug = this.activatedRoute.snapshot.params.slug;
     const resp = await this.postService.getPostBySlug(this.slug);
     this.mPost = resp[0];
+
+    /**
+     * SEO Meta
+     * This sets the title of the window to the article title
+     * and sets the description to the article's excerpt.
+     */
+    this.seoService.setTitle(`${this.post.title.rendered} | ${this.postService.siteTitle}`);
+    this.seoService.setDescription(this.post.excerpt.rendered);
   }
 
   get post() {

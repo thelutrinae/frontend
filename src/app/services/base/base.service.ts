@@ -13,6 +13,7 @@ export class BaseService {
    * the frontend fetches data from the WordPress website
    * through the WordPress API
    */
+  private readonly SITE_TITLE = 'The Lutrinae';
   private readonly BASE_URL = 'https://thelutrinae.com/wp-json/wp/v2';
   private readonly SITE_URL = 'https://thelutrinae.com';
 
@@ -30,6 +31,10 @@ export class BaseService {
 
   get siteURL(): string {
     return this.SITE_URL;
+  }
+
+  get siteTitle(): string {
+    return this.SITE_TITLE;
   }
 
   public createRouterLinks(posts: any): any {
