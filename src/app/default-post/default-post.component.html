@@ -1,7 +1,16 @@
 <div class="container mt-5" *ngIf="post; else loading;">
     <div class="row">
         <div class="col-12 col-md-8">
-            <h1>{{ post.title.rendered }}</h1>
+            <span class="post-categories">
+                <a *ngFor="let category of categories" 
+                    class="post-categories text-muted" 
+                    [routerLink]="['/category', category.slug]">
+                    {{ category.name }}
+                </a>
+            </span>
+        </div>
+        <div class="col-12 col-md-8">
+            <h1 class="single-post-title">{{ post.title.rendered }}</h1>
             <span class="author">
                 By 
                 <ng-template [ngIf]="post.acf.authors">
@@ -18,7 +27,7 @@
                 </ng-template>
             </span>
             <span class="date">
-                {{ post.date | date: "mediumDate" }}
+                <span class="text-muted">•</span> {{ post.date | date: "mediumDate" }}
             </span>
             <article *ngIf="post" class="mt-4"
                 [innerHTML]="post.content.rendered">

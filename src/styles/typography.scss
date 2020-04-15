@@ -1,0 +1,31 @@
+html, body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    
+    &.single-post-title {
+        font-weight: bold;
+    }
+}
+
+/* WordPress dropcap class */
+.has-drop-cap::first-letter {
+    font-family: 'Merriweather';
+    float: left;
+    font-size: 7em;
+    line-height: .8;
+    margin: .1em .2em 0 0.05em;
+    text-transform: uppercase;
+}
+
+.post-categories {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}

@@ -29,4 +29,8 @@ export class DefaultPostComponent implements OnInit {
     return this.mPost;
   }
 
+  get categories() {
+    return this.mPost._embedded['wp:term'][0];
+  }
+
 }
