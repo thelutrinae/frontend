@@ -11,6 +11,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { RelatedPostsComponent } from './components/related-posts/related-posts.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BylineComponent } from './components/byline/byline.component';
+import { DefaultCategoryComponent } from './templates/default-category/default-category.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BylineComponent } from './components/byline/byline.component';
     LoaderComponent,
     RelatedPostsComponent,
     SidebarComponent,
-    BylineComponent
+    BylineComponent,
+    DefaultCategoryComponent
   ],
   imports: [
     BrowserModule,
