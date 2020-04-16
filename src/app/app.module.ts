@@ -5,12 +5,13 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DefaultPostComponent } from './default-post/default-post.component';
-import { DefaultPageComponent } from './default-page/default-page.component';
+import { DefaultPostComponent } from '@templates/default-post/default-post.component';
+import { DefaultPageComponent } from '@templates/default-page/default-page.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { RelatedPostsComponent } from './components/related-posts/related-posts.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BylineComponent } from './components/byline/byline.component';
+import { DefaultCategoryComponent } from './templates/default-category/default-category.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BylineComponent } from './components/byline/byline.component';
     LoaderComponent,
     RelatedPostsComponent,
     SidebarComponent,
-    BylineComponent
+    BylineComponent,
+    DefaultCategoryComponent
   ],
   imports: [
     BrowserModule,

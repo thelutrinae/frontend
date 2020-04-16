@@ -1,4 +1,4 @@
-<section class="bg-accent mt-5 pt-3 pb-4" *ngIf="posts">
+<section class="bg-accent mt-5 pt-3 pb-5" *ngIf="posts">
     <div class="container">
         <div class="row bg-accent">
             <div class="col-12 my-4">
@@ -6,10 +6,10 @@
                 <span class="text-muted"></span>
             </div>
             <div class="col-12 col-md-4" *ngFor="let post of posts">
-                <a href="#" class="post-title">
-                    <h4>{{ post.title.rendered }}</h4>
+                <a [routerLink]="[post.link]" class="post-title">
+                    <h5>{{ post.title.rendered }}</h5>
                 </a>
-                <p class="post-excerpt" [innerHTML]="post.excerpt.rendered"></p>
+                <app-byline [post]="post"></app-byline>
             </div>
         </div>
     </div>
